@@ -1,0 +1,8 @@
+.DS_Store
+quickread/Pods
+quickread/quickread.xcworkspace
+FolioReaderKit/Pods
+FolioReaderKit/Carthage
+FolioReaderKit/Example
+
+
