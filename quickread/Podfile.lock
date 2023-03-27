@@ -1,5 +1,6 @@
 PODS:
   - AEXML (4.3.3)
+  - Alamofire (4.9.1)
   - FolioReaderKit (1.4.0):
     - AEXML (= 4.3.3)
     - FontBlaster (= 4.1.0)
@@ -18,11 +19,13 @@ PODS:
   - ZFDragableModalTransition (0.6)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.5)
   - FolioReaderKit (from `../FolioReaderKit`)
 
 SPEC REPOS:
   trunk:
     - AEXML
+    - Alamofire
     - FontBlaster
     - MenuItemKit
     - Realm
@@ -36,6 +39,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AEXML: 601f41fcaa7bda7605cad153b0f43db9ec006c0f
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   FolioReaderKit: 7f38c3132f51a2ad0db60e049c719cfe84be2cf9
   FontBlaster: 127aa66419478d1c62926c7fdb39841633344a45
   MenuItemKit: 0f850e630b0a3d2bd80fec54db87ce0d2077ada2
@@ -44,6 +48,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
   ZFDragableModalTransition: 0d294eaaba6edfcb9839595de765f9ca06a4b524
 
-PODFILE CHECKSUM: ea9411492d92682043af18f59b51fc54e48d6a61
+PODFILE CHECKSUM: 53d7615d560c0859a224c2a7805f98090f03111d
 
 COCOAPODS: 1.12.0

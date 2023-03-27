@@ -6,7 +6,7 @@ struct ContentView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     SearchBarView()
-                    FeaturedContentView()
+                    FeaturedContentView(viewModel: FeaturedContentViewModel())
 //                    CategoriesView()
 //                    RecentlyAddedView()
 //                    ReadingProgressView()
