@@ -5,7 +5,6 @@ class FeaturedContentViewModel: ObservableObject {
     @Published var bookPreviews: [BookPreview] = []
 
     func fetchRecommendations() {
-        // Replace 'fetchFromCustomAPIProvider' with your actual custom API function
         fetchFromCustomAPIProvider() { result in
             DispatchQueue.main.async {
                 switch result {

@@ -16,16 +16,6 @@ struct BookPreview: Identifiable, Codable {
         case epubURL = "epub_url"
         case fileName = "file_name"
     }
-    
-    init(id: String, title: String, authors: [String], previewLink: String, epubURL: String, fileName: String) {
-        self.id = id
-        self.title = title
-        self.authors = authors
-        self.previewLink = previewLink
-        self.epubURL = epubURL
-        self.fileName = fileName
-        print("in init: epubURL: \(epubURL)")
-    }
 }
 
 struct BookPreviewView: View {

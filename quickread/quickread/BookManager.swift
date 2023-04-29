@@ -3,6 +3,9 @@ import Alamofire
 import FolioReaderKit
 
 class BookManager: ObservableObject {
+    
+    static let shared = BookManager()
+
     func isEpubFileDownloaded(fileName: String) -> Bool {
         let localURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
         return FileManager.default.fileExists(atPath: localURL.path)
@@ -36,4 +39,36 @@ class BookManager: ObservableObject {
                 }
             }
     }
+
+    func findMatches(_ query: String, completion: @escaping ([BookPreview]) -> Void) {
+        
+        // TODO(liq) replace urlString with a new API endpoint
+        // let urlString = "https://your-aws-url.com/api/search?q=\(query)"
+        let urlString = "https://kv7vei147a.execute-api.us-east-1.amazonaws.com/default/book_recommendation"
+
+        guard let url = URL(string: urlString) else {
+            print("Invalid URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                do {
+                    let response = try JSONDecoder().decode([String: [BookPreview]].self, from: data)
+                    let bookPreviews = response["bookPreviews"] ?? []
+                    // TODO(liq) replace this hacky filter with real filter API
+                    let filteredData = bookPreviews.filter { $0.title.hasPrefix(query) }
+                    print(bookPreviews)
+                    DispatchQueue.main.async {
+                        completion(filteredData)
+                    }
+                } catch {
+                    print("Error decoding data: \(error)")
+                }
+            } else {
+                print("Error fetching data: \(error?.localizedDescription ?? "Unknown error")")
+            }
+        }.resume()
+    }
+
 }
