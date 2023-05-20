@@ -1,8 +1,9 @@
 import Combine
 import SwiftUI
 
-class FeaturedContentViewModel: ObservableObject {
+class ForYouViewModel: ObservableObject {
     @Published var bookPreviews: [BookPreview] = []
+    @Published var searchText = ""
 
     func fetchRecommendations() {
         fetchFromCustomAPIProvider() { result in

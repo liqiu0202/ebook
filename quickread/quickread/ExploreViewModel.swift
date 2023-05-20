@@ -6,15 +6,26 @@ class ExploreViewModel: ObservableObject {
     @Published var isSearching = false
     @Published var bookPreviews: [BookPreview] = []
     
-    let bookManager = BookManager.shared // Declare a constant property
+    let bookManager = BookManager.shared
+    private var cancellables: Set<AnyCancellable> = []  // Keep reference to your pipeline
 
-    func updateBookPreviews() {
-        if searchText.isEmpty {
+    init() {
+        $searchText
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)  // delay of 0.5 seconds
+            .sink(receiveValue: searchBooks(_:))  // use the searchBooks function when new value is emitted
+            .store(in: &cancellables)  // retain cancellable
+    }
+    
+    private func searchBooks(_ query: String) {
+        if query.isEmpty {
             // TODO(liq) replace this with default recommended book list
             bookPreviews = []
         } else {
-            bookManager.findMatches(searchText) { matchedBooks in
-                self.bookPreviews = matchedBooks
+            print(searchText)
+            bookManager.findMatches(query) { matchedBooks in
+                DispatchQueue.main.async {
+                    self.bookPreviews = matchedBooks
+                }
             }
         }
     }

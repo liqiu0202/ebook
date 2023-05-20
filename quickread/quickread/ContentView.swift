@@ -4,7 +4,7 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-            ForYouTabView()
+            ForYouView()
                 .tabItem {
                     Label("For You", systemImage: "heart")
                 }
@@ -37,3 +37,8 @@ struct ContentView: View {
     }
 }
 
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}

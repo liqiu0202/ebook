@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-quickread-dev-212951-authRole",
+      "UnauthRoleArn": "arn:aws:iam::648311408313:role/amplify-quickread-dev-212951-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::648311408313:role/amplify-quickread-dev-212951-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-quickread-dev-212951-deployment",
+      "UnauthRoleName": "amplify-quickread-dev-212951-unauthRole",
+      "StackName": "amplify-quickread-dev-212951",
+      "StackId": "arn:aws:cloudformation:us-east-2:648311408313:stack/amplify-quickread-dev-212951/2b0f6840-ea1b-11ed-a54d-02d83df58ddb",
+      "AmplifyAppId": "d3m6suwi9g6cny"
+    },
+    "categories": {
+      "auth": {
+        "quickread8be243b7": {}
+      }
+    }
+  }
+}

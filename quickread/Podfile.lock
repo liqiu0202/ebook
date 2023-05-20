@@ -1,6 +1,32 @@
 PODS:
   - AEXML (4.3.3)
   - Alamofire (4.9.1)
+  - Amplify (1.30.0):
+    - Amplify/Default (= 1.30.0)
+  - Amplify/Default (1.30.0)
+  - AmplifyPlugins/AWSCognitoAuthPlugin (1.30.0):
+    - AWSAuthCore (~> 2.31.0)
+    - AWSCognitoIdentityProvider (~> 2.31.0)
+    - AWSCognitoIdentityProviderASF (~> 2.31.0)
+    - AWSCore (~> 2.31.0)
+    - AWSMobileClient (~> 2.31.0)
+    - AWSPluginsCore (= 1.30.0)
+  - AWSAuthCore (2.31.1):
+    - AWSCore (= 2.31.1)
+  - AWSCognitoIdentityProvider (2.31.1):
+    - AWSCognitoIdentityProviderASF (= 2.31.1)
+    - AWSCore (= 2.31.1)
+  - AWSCognitoIdentityProviderASF (2.31.1):
+    - AWSCore (= 2.31.1)
+  - AWSCore (2.31.1)
+  - AWSMobileClient (2.31.1):
+    - AWSAuthCore (= 2.31.1)
+    - AWSCognitoIdentityProvider (= 2.31.1)
+    - AWSCognitoIdentityProviderASF (= 2.31.1)
+    - AWSCore (= 2.31.1)
+  - AWSPluginsCore (1.30.0):
+    - Amplify (= 1.30.0)
+    - AWSCore (~> 2.31.0)
   - FolioReaderKit (1.4.0):
     - AEXML (= 4.3.3)
     - FontBlaster (= 4.1.0)
@@ -20,12 +46,23 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - Amplify
+  - AmplifyPlugins/AWSCognitoAuthPlugin
+  - AWSPluginsCore
   - FolioReaderKit (from `../FolioReaderKit`)
 
 SPEC REPOS:
   trunk:
     - AEXML
     - Alamofire
+    - Amplify
+    - AmplifyPlugins
+    - AWSAuthCore
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSMobileClient
+    - AWSPluginsCore
     - FontBlaster
     - MenuItemKit
     - Realm
@@ -40,6 +77,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AEXML: 601f41fcaa7bda7605cad153b0f43db9ec006c0f
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Amplify: 612953527df8a4809de53d7bd7cd39e3d391066a
+  AmplifyPlugins: 93ac2c18c87b4f1dc408eb9492d1aa3bfdd23012
+  AWSAuthCore: efed26af355360a00b84fc9251ce3e3beeecac92
+  AWSCognitoIdentityProvider: 63dda7bea693a2b0e76229c40a82a8a4199e4487
+  AWSCognitoIdentityProviderASF: a7323a914ab660c625b71a05d338230dcfee3d2e
+  AWSCore: 3fa19af1810d4430cfb735cc5323b68d8674fb5b
+  AWSMobileClient: 5605350f3e9c0ee6d1f2b2a1a0b8aa2954aef6cb
+  AWSPluginsCore: 9f6380f0e88e97c7350b8993cad23c480f18e4c4
   FolioReaderKit: 7f38c3132f51a2ad0db60e049c719cfe84be2cf9
   FontBlaster: 127aa66419478d1c62926c7fdb39841633344a45
   MenuItemKit: 0f850e630b0a3d2bd80fec54db87ce0d2077ada2
@@ -48,6 +93,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 14401ade5f8e82aba1ff03e9f88e9de60937ae60
   ZFDragableModalTransition: 0d294eaaba6edfcb9839595de765f9ca06a4b524
 
-PODFILE CHECKSUM: 53d7615d560c0859a224c2a7805f98090f03111d
+PODFILE CHECKSUM: 0491ceda9edb822bd4f9b99cb5e392d9d19218c2
 
 COCOAPODS: 1.12.0
