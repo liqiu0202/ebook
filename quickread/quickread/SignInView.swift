@@ -16,7 +16,7 @@ struct SignInView: View {
 //        VStack {
             if signInWithAppleManager.isAuthorized {
                 // Display ForYouView for logged-in user
-                ForYouView()
+                HomeView()
             } else {
                 VStack {
                     VStack {
